@@ -1,0 +1,230 @@
+:root {
+    --azul: #062d5b;
+    --vermelho: #ed1b24;
+    --branco: #fff;
+    --cinza: #f2f4f6;
+    --texto: #10233f;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--cinza);
+    color: var(--texto);
+}
+a { text-decoration: none; color: inherit; }
+
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(255,255,255,.97);
+    border-bottom: 1px solid #dfe5eb;
+    box-shadow: 0 3px 18px rgba(0,0,0,.08);
+}
+.topbar-inner {
+    width: min(1180px, calc(100% - 30px));
+    min-height: 72px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+.brand { display:flex; align-items:center; gap:10px; color:var(--azul); }
+.brand-symbol {
+    width: 42px; height: 42px; border: 3px solid var(--vermelho); border-radius:50%;
+    display:grid; place-items:center; color:var(--vermelho); font-size:12px; font-weight:900;
+}
+.brand span:last-child { display:flex; flex-direction:column; line-height:1; }
+.brand strong { font-size:20px; letter-spacing:-.5px; }
+.brand small { margin-top:5px; font-size:8px; letter-spacing:3px; }
+.top-actions { display:flex; align-items:center; gap:12px; font-size:14px; font-weight:700; }
+.top-actions > a:first-child { color:var(--azul); }
+.whatsapp-btn {
+    padding:10px 18px; border-radius:6px; background:var(--vermelho); color:#fff;
+}
+
+.catalogo { width: min(100%, 1100px); margin: 0 auto; }
+.catalog-page {
+    background:#fff;
+    line-height:0;
+    box-shadow:0 10px 35px rgba(0,0,0,.10);
+}
+.catalog-page img { width:100%; height:auto; display:block; image-rendering:auto; }
+
+
+/* Links invisíveis sobre as categorias, preservando 100% do layout original */
+.catalog-page-links { position: relative; }
+.catalog-hotspot {
+    position: absolute;
+    z-index: 5;
+    display: block;
+    border-radius: 1.5%;
+    cursor: pointer;
+    transition: background-color .18s ease, box-shadow .18s ease;
+}
+.catalog-hotspot:hover,
+.catalog-hotspot:focus-visible {
+    background: rgba(255,255,255,.08);
+    box-shadow: inset 0 0 0 3px rgba(237,27,36,.78);
+    outline: none;
+}
+/* Página 2: posições proporcionais ao desenho original */
+.catalog-hotspot.linha-profissional { left:1.5%; top:20.3%; width:36.5%; height:28.1%; }
+.catalog-hotspot.sacos        { left:38.6%; top:20.3%; width:28.7%; height:28.1%; }
+.catalog-hotspot.papeis       { left:67.9%; top:20.3%; width:30.5%; height:28.1%; }
+.catalog-hotspot.dispensers   { left:1.5%;  top:48.8%; width:36.5%; height:30.6%; }
+.catalog-hotspot.descartaveis { left:38.6%; top:48.8%; width:28.7%; height:30.6%; }
+.catalog-hotspot.equipamentos { left:67.9%; top:48.8%; width:30.5%; height:30.6%; }
+
+.spartan-logo-wrap { cursor:pointer; }
+.spartan-logo-wrap:hover .spartan-logo,
+.spartan-logo-wrap:focus-visible .spartan-logo { transform:scale(1.025); }
+.spartan-logo { transition:transform .18s ease; }
+.spartan-copy h2 a:hover,
+.spartan-copy h2 a:focus-visible { text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:5px; }
+
+
+/* Produtos individuais da Linha Profissional */
+.catalog-page-products { position: relative; }
+.product-hotspot {
+    position: absolute;
+    z-index: 6;
+    display: block;
+    cursor: pointer;
+    border-radius: 2%;
+    transition: background-color .18s ease, box-shadow .18s ease;
+}
+.product-hotspot:hover,
+.product-hotspot:focus-visible {
+    background: rgba(255,255,255,.08);
+    box-shadow: inset 0 0 0 3px rgba(237,27,36,.78);
+    outline: none;
+}
+.product-hotspot.floral { left: 4.5%; top: 26.5%; width: 29%; height: 33%; }
+.product-hotspot.pine   { left: 35.5%; top: 26.5%; width: 29%; height: 33%; }
+.product-hotspot.peroxy { left: 65.5%; top: 26.5%; width: 29%; height: 33%; }
+
+/* Contatos clicáveis na página final */
+.catalog-page-contact { position: relative; }
+.contact-hotspot {
+    position: absolute;
+    z-index: 6;
+    display: block;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color .18s ease, box-shadow .18s ease;
+}
+.contact-hotspot:hover,
+.contact-hotspot:focus-visible {
+    background: rgba(255,255,255,.10);
+    box-shadow: inset 0 0 0 3px rgba(237,27,36,.78);
+    outline: none;
+}
+.contact-hotspot.whatsapp  { left: 4.0%; top: 31.8%; width: 34.0%; height: 5.0%; }
+.contact-hotspot.telefone  { left: 4.0%; top: 36.8%; width: 33.0%; height: 5.0%; }
+.contact-hotspot.endereco  { left: 4.0%; top: 41.8%; width: 48.0%; height: 5.5%; }
+.contact-hotspot.email     { left: 4.0%; top: 47.5%; width: 48.0%; height: 5.0%; }
+.contact-hotspot.instagram { left: 4.0%; top: 52.6%; width: 36.0%; height: 5.0%; }
+
+/* Distribuidor Oficial Spartan Brasil */
+.spartan-section {
+    background: #fff;
+    padding: 52px 30px;
+    border-top: 7px solid var(--vermelho);
+    border-bottom: 1px solid #dfe5eb;
+    box-shadow: 0 10px 35px rgba(0,0,0,.08);
+}
+.spartan-content {
+    width: min(920px, 100%);
+    margin: auto;
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    align-items: center;
+    gap: 48px;
+}
+.spartan-logo-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 24px;
+    border-right: 1px solid #dfe5eb;
+}
+.spartan-logo {
+    width: min(190px, 100%);
+    height: auto;
+    display: block;
+}
+.spartan-eyebrow {
+    color: var(--vermelho);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+.spartan-copy h2 {
+    margin-top: 7px;
+    color: var(--azul);
+    font-size: clamp(26px, 3vw, 38px);
+    line-height: 1.08;
+}
+.spartan-copy p {
+    margin-top: 14px;
+    max-width: 620px;
+    font-size: 17px;
+    line-height: 1.55;
+    color: #42556d;
+}
+
+.actions {
+    margin-top: 32px;
+    background: var(--azul);
+    color: #fff;
+    border-top: 7px solid var(--vermelho);
+}
+.actions-inner {
+    width:min(1100px, calc(100% - 30px));
+    margin:auto;
+    padding:38px 0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:30px;
+}
+.actions span { color:#ff333b; font-size:12px; font-weight:800; letter-spacing:2px; }
+.actions h1 { margin-top:5px; font-size:30px; }
+.actions p { margin-top:7px; color:rgba(255,255,255,.82); }
+.action-buttons { display:flex; gap:12px; flex-wrap:wrap; }
+.action-buttons a { padding:13px 20px; border-radius:6px; font-weight:800; white-space:nowrap; }
+.primary { background:var(--vermelho); color:#fff; }
+.secondary { background:#fff; color:var(--azul); }
+
+footer { padding:22px; text-align:center; background:#031e3d; color:#fff; font-size:12px; letter-spacing:2px; }
+.floating-whatsapp {
+    position:fixed; right:20px; bottom:20px; z-index:100;
+    width:58px; height:58px; display:grid; place-items:center;
+    border-radius:50%; background:#1eaf5a; color:#fff; border:3px solid #fff;
+    box-shadow:0 8px 25px rgba(0,0,0,.25); font-weight:900;
+}
+
+@media (max-width: 700px) {
+    .topbar-inner { min-height:62px; }
+    .brand-symbol { width:35px; height:35px; }
+    .brand strong { font-size:16px; }
+    .brand small { font-size:6px; letter-spacing:2px; }
+    .top-actions > a:first-child { display:none; }
+    .whatsapp-btn { padding:9px 13px; font-size:13px; }
+    .catalogo { width:100%; }
+    .catalog-page { box-shadow:none; }
+    .spartan-section { padding:36px 22px; }
+    .spartan-content { grid-template-columns:1fr; gap:25px; text-align:center; }
+    .spartan-logo-wrap { border-right:0; border-bottom:1px solid #dfe5eb; padding:0 0 25px; }
+    .spartan-logo { width:150px; }
+    .spartan-copy p { font-size:15px; margin-left:auto; margin-right:auto; }
+    .actions-inner { flex-direction:column; align-items:flex-start; padding:30px 0; }
+    .actions h1 { font-size:25px; }
+    .action-buttons { width:100%; }
+    .action-buttons a { flex:1; text-align:center; }
+    .floating-whatsapp { right:14px; bottom:14px; width:54px; height:54px; }
+}
